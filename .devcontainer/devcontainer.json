@@ -1,0 +1,59 @@
+{
+  "name": "42 C++ Module 01",
+  "image": "mcr.microsoft.com/devcontainers/cpp:1-ubuntu-24.04",
+
+  "features": {
+    "ghcr.io/devcontainers/features/git:1": {},
+    "ghcr.io/devcontainers/features/github-cli:1": {}
+  },
+
+  "remoteEnv": {
+    "CC": "gcc",
+    "CXX": "g++",
+    "CXXFLAGS": "-Wall -Wextra -Werror -std=c++98"
+  },
+
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "editor.tabSize": 4,
+        "editor.insertSpaces": false,
+        "editor.formatOnSave": true,
+        "files.trimTrailingWhitespace": true,
+        "files.insertFinalNewline": true,
+
+        "C_Cpp.default.cppStandard": "c++98",
+        "C_Cpp.default.compilerPath": "/usr/bin/g++",
+        "C_Cpp.default.intelliSenseMode": "linux-gcc-x64",
+
+        "clangd.arguments": [
+          "--header-insertion=never",
+          "--completion-style=detailed"
+        ],
+
+        "terminal.integrated.defaultProfile.linux": "bash"
+      },
+
+      "extensions": [
+        "ms-vscode.cpptools",
+        "ms-vscode.cpptools-extension-pack",
+        "llvm-vs-code-extensions.vscode-clangd",
+        "xaver.clang-format",
+        "cschlosser.doxdocgen",
+        "streetsidesoftware.code-spell-checker",
+        "eamodio.gitlens",
+        "usernamehw.errorlens",
+        "gruntfuggly.todo-tree",
+        "ms-vscode.makefile-tools",
+        "twxs.cmake",
+        "yzhang.markdown-all-in-one",
+        "tomoki1207.pdf",
+        "mhutchie.git-graph"
+      ]
+    }
+  },
+
+  "forwardPorts": [3000, 8080],
+
+  "postCreateCommand": "sudo apt update && sudo apt install -y valgrind build-essential gdb clang-format && echo 'Environment ready for 42 C++ projects!'"
+}
