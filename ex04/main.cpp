@@ -11,7 +11,7 @@ int main(int argc, char **argv)
 	std::string filename = argv[1];
 	std::string find = argv[2];
 	std::string replace = argv[3];
-	if(filename.empty() || find.empty() || replace.empty())
+	if(filename.empty() || find.empty())
 	{
 		std::cerr << "Args can't be empty" << std::endl;
 		return (1);
